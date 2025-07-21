@@ -1,0 +1,11 @@
+Django>=4.0
+djangorestframework
+psycopg2-binary
+celery
+django-celery-beat
+pandas
+gunicorn
+python-dotenv
+openpyxl 
+dj-database-url 
+redis 

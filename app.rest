@@ -1,0 +1,36 @@
+### Register a new customer
+POST http://localhost:8000/register/
+Content-Type: application/json
+
+{
+  "first_name": "Gojo",
+  "last_name": "Satoru",
+  "age": 35,
+  "monthly_income": 45000,
+  "phone_number": "2094760292"
+}
+
+### Check eligibility for a loan
+POST http://localhost:8000/check-eligibility/
+Content-Type: application/json
+
+{
+  "customer_id": 302,
+  "loan_amount": 150000,
+  "interest_rate": 14,
+  "tenure": 12
+}
+
+### Create a loan
+POST http://localhost:8000/create-loan/
+Content-Type: application/json
+
+{
+  "customer_id": 302,
+  "loan_amount": 150000,
+  "interest_rate": 14,
+  "tenure": 12
+}
+
+### View all loans for a customer
+GET http://localhost:8000/view-loans/302/
