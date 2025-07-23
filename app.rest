@@ -37,6 +37,7 @@ GET http://localhost:8000/view-loans/302/
 
 
 ### Check eligibility for a loan (on an existing customer)(EXPECTED REJECTION: EMI > 50% of salary)
+# Here in this case I am testing on an existing customer, but feel free to test with new ones.
 POST http://localhost:8000/check-eligibility/
 Content-Type: application/json
 
@@ -49,8 +50,8 @@ Content-Type: application/json
 
 ###
 
-### Create a loan (on an existing customer)(EXPECTED REJECTION: Low credit score)
-# Note: Replace customer_id with a customer who has a credit score of 10 or less.
+### Create a loan (EXPECTED REJECTION: Low credit score)
+# Note: Replace customer_id with a customer who has a credit score of 10 or less. Here in this case I am testing on an existing customer, but feel free to test with new ones.
 POST http://localhost:8000/create-loan/
 Content-Type: application/json
 
@@ -63,8 +64,8 @@ Content-Type: application/json
 
 ###
 
-### Check eligibility for a loan (on an existing customer)(EXPECTED REJECTION: Interest rate too low for credit score)
-# Note: Replace customer_id with a customer who has a credit score between 30 and 50.
+### Check eligibility for a loan (EXPECTED REJECTION: Interest rate too low for credit score)
+# Note: Replace customer_id with a customer who has a credit score between 30 and 50. Here in this case I am testing on an existing customer, but feel free to test with new ones.
 POST http://localhost:8000/check-eligibility/
 Content-Type: application/json
 
