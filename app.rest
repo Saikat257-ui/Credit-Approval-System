@@ -34,3 +34,43 @@ Content-Type: application/json
 
 ### View all loans for a customer
 GET http://localhost:8000/view-loans/302/
+
+
+### Check eligibility for a loan (on an existing customer)(EXPECTED REJECTION: EMI > 50% of salary)
+POST http://localhost:8000/check-eligibility/
+Content-Type: application/json
+
+{
+  "customer_id": 302,
+  "loan_amount": 500000,
+  "interest_rate": 10,
+  "tenure": 12
+}
+
+###
+
+### Create a loan (on an existing customer)(EXPECTED REJECTION: Low credit score)
+# Note: Replace customer_id with a customer who has a credit score of 10 or less.
+POST http://localhost:8000/create-loan/
+Content-Type: application/json
+
+{
+  "customer_id": 301,
+  "loan_amount": 10000,
+  "interest_rate": 15,
+  "tenure": 6
+}
+
+###
+
+### Check eligibility for a loan (on an existing customer)(EXPECTED REJECTION: Interest rate too low for credit score)
+# Note: Replace customer_id with a customer who has a credit score between 30 and 50.
+POST http://localhost:8000/check-eligibility/
+Content-Type: application/json
+
+{
+  "customer_id": 45,
+  "loan_amount": 50000,
+  "interest_rate": 11,
+  "tenure": 12
+}
