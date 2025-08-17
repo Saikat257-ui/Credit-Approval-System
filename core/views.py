@@ -3,9 +3,13 @@ from rest_framework.response import Response
 from rest_framework import status
 from .models import Customer, Loan
 from .serializers import CustomerSerializer, LoanSerializer
+from django.http import HttpResponse
 from django.db.models import Sum
 from datetime import date
 import math
+
+def welcome_view(request):
+    return HttpResponse("<h1>Welcome to the Credit Approval System</h1><p>Use our API endpoints to manage loans and check credit eligibility.</p>")
 
 # Helper: Compound interest EMI calculation
 def calculate_emi(principal, rate, tenure):
